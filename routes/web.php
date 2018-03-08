@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', 'HomeController@index')->name('home');
+Route::get('trangchu', 'FrontController@trangchu');
+Route::get('change-language/{language}', 'HomeController@changeLanguage')->name('user.change-language');
