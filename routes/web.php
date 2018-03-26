@@ -50,3 +50,15 @@ Route::get('product-Detail/{id}', [
         'as' => 'productDetail',
         'uses' => 'FrontController@productDetail'
     ]);
+
+Route::get('checkout', 'CartController@checkout');
+Route::post('checkout', 'CartController@postcheckout');
+Route::get('thanks', 'CartController@thanks');
+//cart
+Route::get('cart/add/{id}', 'CartController@addItem');
+Route::get('cart', 'CartController@index');
+Route::get('updateCart/{id}/{qty}','CartController@updateCart');
+Route::get('delCart/{id}', 'CartController@deleteCart');
+Route::post('seach','FrontController@seach');
+
+

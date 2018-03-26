@@ -87,4 +87,13 @@ class FrontController extends Controller
 
         return view('pages.productDetail', compact('product', 'pros', 'prodis'));
     }
+
+    public function seach(Request $request){
+        $tk=$request->timkiem;
+        $search=Product::where('name','like',"%$tk%")
+            ->orwhere('price','like',"%$tk%")->get();
+        return view('pages.search')
+        ->with('tk',$tk)
+        ->with('search',$search);
+    }
 }

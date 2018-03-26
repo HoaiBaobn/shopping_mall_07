@@ -7,7 +7,7 @@
                 <div class="row">
                     <div class="inner">
                         <ul>
-                            <li class="home"><a itemprop="url" title="Quay lại trang chủ" href="/"><span itemprop="title">{{ Lang::get('index.index.home')}} >> </span></a></li>
+                            <li class="home"><a itemprop="url" title="Quay lại trang chủ" href="/"><span itemprop="title">{{ Lang::get('index.index.home')}} </span></a></li>
                             <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                             <li><span itemprop="title" class="brn">{{ Lang::get('index.homepage.productall') }}</span></li>
                         </ul>
@@ -26,7 +26,7 @@
                             </div>
                         </div>
                         <div class="row ">
-                            @foreach($product as $pro)
+                            @foreach($cat_pro as $pro)
                             <div class="col-sm-3">
                                 <div class="single-item">
                                     <div class="single-item-header">
@@ -45,7 +45,7 @@
                                         </p>
                                     </div>
                                     <div class="single-item-caption">
-                                        <a class="add-to-cart pull-left" href="shopping_cart.html"><i class="fa fa-shopping-cart"></i></a>
+                                        <a class="add-to-cart pull-left" href="{{url('/cart/add')}}/{{$pro->id}}"><i class="fa fa-shopping-cart"></i></a>
                                         <a class="beta-btn primary" href="{{route('productDetail', $pro->id)}}">Details <i class="fa fa-chevron-right"></i></a>
                                         <div class="clearfix"></div>
                                     </div>
